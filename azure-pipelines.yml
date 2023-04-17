@@ -25,16 +25,10 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-- task: Maven@3
-  displayName: Create Docker image
-  inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'spring-boot:build-image'
-    publishJUnitResults: false
-    jdkVersionOption: '1.17'
 
 - task: Docker@2
   inputs:
     containerRegistry: 'My Docker Hub'
     repository: 'petclinic-test'
-    command: 'push'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'

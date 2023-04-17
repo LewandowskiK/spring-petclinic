@@ -35,6 +35,6 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'My Docker Hub'
-    repository: 'latest'
+    repository: 'spring-petclinic'
     command: 'push'
-    tags: 'latest'
+    tags: '3.0.0-SNAPSHOT'

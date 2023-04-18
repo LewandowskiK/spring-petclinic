@@ -36,4 +36,3 @@ steps:
     containerRegistry: 'My Docker Hub'
     repository: 'spring-petclinic'
     command: 'push'
-    tags: '3.0.0-SNAPSHOT'

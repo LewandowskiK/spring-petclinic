@@ -25,13 +25,10 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-- task: Maven@3
-  displayName: Build Docker image
+- task: Docker@2
   inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'spring-boot:build-image'
-    publishJUnitResults: false
-    jdkVersionOption: '1.17'
+    command: 'build'
+    Dockerfile: '**/Dockerfile'
 - task: Docker@2
   inputs:
     containerRegistry: 'My Docker Hub'

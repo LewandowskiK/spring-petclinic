@@ -28,10 +28,6 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'My Docker Hub'
-    command: 'login'
-- task: Docker@2
-  inputs:
-    containerRegistry: 'My Docker Hub'
     repository: 'bigguy123 / spring-petclinic'
     command: 'build'
     Dockerfile: '**/Dockerfile'

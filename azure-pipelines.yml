@@ -30,9 +30,10 @@ steps:
     containerRegistry: 'My Docker Hub'
     repository: 'bigguy123 / spring-petclinic'
     command: 'build'
-    Dockerfile: '**/Dockerfile'
+    Dockerfile: 'SNAPSHOT-3.0.0'
 - task: Docker@2
   inputs:
     containerRegistry: 'My Docker Hub'
     repository: 'bigguy123 / spring-petclinic'
     command: 'push'
+    tags: 'SNAPSHOT-3.0.0'
